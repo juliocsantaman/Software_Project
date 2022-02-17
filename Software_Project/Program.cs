@@ -3,6 +3,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
+
 //se declara un cronometro para la ejecucion del programa
 Stopwatch chronProgram = new System.Diagnostics.Stopwatch();
 //se inicia el cronometro
@@ -19,7 +20,7 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
 }
 
 //loop que corre 503 veces
-for (int i = 1; i <= 503; i++)
+for (int i = 1; i <= 1; i++)
 {
     //si la vuelta es menor o igual a 10, el nombre del file tendrá dos ceros en el path
     if (i <= 9)
@@ -78,20 +79,25 @@ for (int i = 1; i <= 503; i++)
         Console.Error.WriteLine(ex.ToString());
     }
 }
+
 //se agrega al log file lo que se mostrará en consola
 using (StreamWriter logfile = File.AppendText(@"log.txt"))
 {
     logfile.WriteLine("Todos los archivos se modificaron en " + totalTimeFiles + " ms");
 }
+
 //se muestra el tiempo que se tardó en abrir todos los files
 Console.WriteLine("Todos los archivos se modificaron en " + totalTimeFiles + " ms");
+
 //se detiene el cronometro del programa
 chronProgram.Stop();
+
 //se agrega al log file lo que se mostrará en consola y se cierra el identificador de ejecución
 using (StreamWriter logfile = File.AppendText(@"log.txt"))
 {
     logfile.WriteLine("El programa se ejecutó en " + chronProgram.ElapsedMilliseconds + " ms");
     logfile.WriteLine("--------------------------------------------------");
 }
+
 //se muestra el tiempo de ejecucíon del programa
 Console.WriteLine("El programa se ejecutó en " + chronProgram.ElapsedMilliseconds + " ms");
