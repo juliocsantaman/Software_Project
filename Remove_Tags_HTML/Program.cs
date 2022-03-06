@@ -58,6 +58,21 @@ for (int i = 1; i <= 503; i++)
         //se guarda en el nuevo file el texto del html original sin las etiquetas
         File.WriteAllText(newName, Regex.Replace(source, "<.*?>", string.Empty));
 
+        //se limpian los saltos de línea
+        String[] text = File.ReadAllLines(newName.ToString()).Where(s => s.Trim() != string.Empty).ToArray();
+
+        //se eliminan los espacios
+        for (int word = 0; word < text.Length; word++)
+        {
+            text[word] = text[word].Trim();
+        }
+        
+        //se elimina el file existente
+        File.Delete(newName.ToString());
+
+        //se crea nuevo file con mismo nombre
+        File.WriteAllLines(newName.ToString(), text);
+
         //se detiene el cronometro
         chronRemoveTags.Stop();
 
