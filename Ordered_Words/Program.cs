@@ -20,7 +20,7 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
 }
 
 //loop que corre 503 veces
-for (int i = 1; i <= 1; i++)
+for (int i = 1; i <= 503; i++)
 {
     //si la vuelta es menor o igual a 10, el nombre del file tendrá dos ceros en el path
     if (i <= 9)
