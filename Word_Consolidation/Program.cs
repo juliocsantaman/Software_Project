@@ -16,7 +16,7 @@ long allFileWords = 0;
 Stopwatch orderAllWords = new System.Diagnostics.Stopwatch();
 
 //string para el path del file resultante
-string resultantFile = $@"wordConsolidation.txt";
+string resultantFile = $@"a4_matricula.txt";
 
 //se agrega un detalle decorativo al log file para separar una ejecucion de otra
 using (StreamWriter logfile = File.AppendText(@"log.txt"))
