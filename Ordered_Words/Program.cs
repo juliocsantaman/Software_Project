@@ -53,7 +53,7 @@ for (int i = 1; i <= 503; i++)
         string source = File.ReadAllText(path);
 
         //se guarda en el array las palabras separadas por espacio y caracteres especiales no omitiendo numeros
-        string[] valores = source.Split('@', '/', '-', '.', ':', ';', ')', '(', '#', '$', '%', '_', ' ', ',', '|', '&', '[', ']', '*', '\n', '!', '<', '>', '\'', ' ', '?', '"', '=');
+        string[] valores = source.Split('@', '/', '-', '.', ':', ';', ')', '(', '#', '$', '%', '_', ' ', ',', '|', '&', '[', ']', '*', '\n', '!', '<', '>', '\'', '\t', '?', '"', '=', '{', '}', '´', '~', '*', '/');
 
         //se realiza la comparación para acomodar alfabéticamente
         Comparison<string> comparador = new Comparison<string>((cadena1, cadena2) => cadena1.CompareTo(cadena2));
