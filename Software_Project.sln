@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Remove_Tags_HTML", "Remove_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordered_Words", "Ordered_Words\Ordered_Words.csproj", "{06FCA9B7-832B-4613-8CD3-64E199EDF795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Word_Consolidation", "Word_Consolidation\Word_Consolidation.csproj", "{1F5910BF-FEBA-4183-87FE-785D9F649874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Word_Consolidation", "Word_Consolidation\Word_Consolidation.csproj", "{1F5910BF-FEBA-4183-87FE-785D9F649874}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exclude_Duplicated", "Exclude_Duplicated\Exclude_Duplicated.csproj", "{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1F5910BF-FEBA-4183-87FE-785D9F649874}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F5910BF-FEBA-4183-87FE-785D9F649874}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F5910BF-FEBA-4183-87FE-785D9F649874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
