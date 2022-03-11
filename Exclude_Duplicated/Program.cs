@@ -56,20 +56,21 @@ for (int i = 1; i <= 4; i++)
         //en cada vuelta se guardan todas las palabras de un file en el array words
         string[] words = File.ReadAllLines(path.ToString()).ToArray();
 
-        //
+        //el primer for asigna la palabra al string thisWord
         for (int word = 0; word < words.Length; word++)
         {
             String thisWord = words[word];
-
+            //el segundo for compara la palabra thisWord con todas las palabras en el array 
             for (int next = 0; next < words.Length; next++)
             {
+                //si la palabra es igual, aumenta el contador
                 if (thisWord == words[next])
                 {
                     reps += 1;
                 }
             }
 
-            //necesito agregar un condicion para poder agregar lo de abajo al nuevo file. Si no agrego una
+            //ahora necesito agregar un condicion para poder agregar lo de abajo al nuevo file. Si no agrego una
             //condición, agrega el texto por cada vuelta y necesitamos que lo agregue una sola vez
 
             using (StreamWriter newFile = File.AppendText($@"{path}-count.txt"))
