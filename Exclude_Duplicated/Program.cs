@@ -98,8 +98,10 @@ for (int i = 1; i <= 4; i++)
     }
 }
 
+//se agrega a un array de strings todas las palabras del consolidado
 string[] allWords = File.ReadAllLines(@"a4_matricula.txt".ToString()).ToArray();
 
+//se agrega cada palabra y su repetición del file de consolidado al nuevo file
 foreach (var repeatedWords in allWords.GroupBy(word => word).Where(word => word.Count() >= 0))
 {
     using (StreamWriter newFile = File.AppendText(@"a5_matricula.txt"))
