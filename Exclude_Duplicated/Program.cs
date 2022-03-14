@@ -97,6 +97,18 @@ for (int i = 1; i <= 4; i++)
         Console.Error.WriteLine(ex.ToString());
     }
 }
+
+string[] allWords = File.ReadAllLines(@"a4_matricula.txt".ToString()).ToArray();
+
+foreach (var repeatedWords in allWords.GroupBy(word => word).Where(word => word.Count() >= 0))
+{
+    using (StreamWriter newFile = File.AppendText(@"a5_matricula.txt"))
+    {
+        // Accedemos a Key = palabra y a Count = veces repetidas.
+        newFile.WriteLine("{0} {1}", repeatedWords.Key, repeatedWords.Count());
+    }
+}
+
 //se agrega al log file lo que se mostrará en consola
 using (StreamWriter logfile = File.AppendText(@"log.txt"))
 {
