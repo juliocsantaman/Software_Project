@@ -53,10 +53,19 @@ for (int i = 1; i <= 503; i++)
         //en cada vuelta se guardan todas las palabras de un file en el array words
         string[] words = File.ReadAllLines(path.ToString()).ToArray();
 
+        //se convierte el array a lowercase 
+        string[] wordsLower = words.Select(s => s.ToLowerInvariant()).ToArray();
+
+        //se elimina el file existente
+        File.Delete(path.ToString());
+
+        //se crea nuevo file con mismo nombre
+        File.WriteAllLines(path.ToString(), wordsLower);
+
         //se agregan las palabras al archivo consolidado
         for (int word = 0; word < words.Length; word++)
         {
-            //se convierte la palabra a lower case
+            //se convierte la palabra a lowercase
             words[word] = words[word].ToLower();
 
             //se agrega la palabra al file de consolidacion
