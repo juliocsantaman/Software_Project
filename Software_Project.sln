@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordered_Words", "Ordered_Wo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Word_Consolidation", "Word_Consolidation\Word_Consolidation.csproj", "{1F5910BF-FEBA-4183-87FE-785D9F649874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exclude_Duplicated", "Exclude_Duplicated\Exclude_Duplicated.csproj", "{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exclude_Duplicated", "Exclude_Duplicated\Exclude_Duplicated.csproj", "{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sum_Word_Per_File", "Sum_Word_Per_File\Sum_Word_Per_File.csproj", "{E6D7A38C-18EE-44D5-82AF-DBC38EBDED6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DE9CEBF-B84D-443C-B5DA-D9D748D656D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D7A38C-18EE-44D5-82AF-DBC38EBDED6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D7A38C-18EE-44D5-82AF-DBC38EBDED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D7A38C-18EE-44D5-82AF-DBC38EBDED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D7A38C-18EE-44D5-82AF-DBC38EBDED6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
