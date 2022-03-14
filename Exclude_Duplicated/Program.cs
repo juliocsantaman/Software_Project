@@ -55,14 +55,14 @@ for (int i = 1; i <= 1; i++)
         //en cada vuelta se guardan todas las palabras de un file en el array words
         string[] words = File.ReadAllLines(path.ToString()).ToArray();
 
-        // LINQ. Se hace el filtro de los grupos, es decir, las palabras repetidas.
-        foreach (var grouping in words.GroupBy(t => t).Where(t => t.Count() >= 0))
+        // LINQ. Se hace el filtro de los grupos, es decir, las palabras repetidas
+        // y de forma descendente con respecto a las frecuencias de las palabras.
+        foreach (var repeatedWords in words.GroupBy(word => word).Where(word => word.Count() >= 0).OrderByDescending(word => word.Count()))
         {
-            //Console.WriteLine(string.Format("'{0}' está repetido {1} veces.", grouping.Key, grouping.Count()));
             using (StreamWriter newFile = File.AppendText($@"{path}-count.txt"))
             {
-                // Accdedemos a Key = palabra y a Count = veces repetidas.
-                newFile.WriteLine("{0} {1}", grouping.Key, grouping.Count());
+                // Accedemos a Key = palabra y a Count = veces repetidas.
+                newFile.WriteLine("{0} {1}", repeatedWords.Key, repeatedWords.Count());
             }
         }
 
@@ -107,4 +107,5 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
 
 //se muestra el tiempo de ejecucíon del programa
 Console.WriteLine("El programa se ejecutó en " + chronProgram.ElapsedMilliseconds + " ms");
+
 
