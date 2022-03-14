@@ -56,10 +56,21 @@ for (int i = 1; i <= 1; i++)
         string[] words = File.ReadAllLines(path.ToString()).ToArray();
 
         // LINQ. Se hace el filtro de los grupos, es decir, las palabras repetidas
+        // mostrando palabra alfabéticamente y repetición.
+        foreach (var repeatedWords in words.GroupBy(word => word).Where(word => word.Count() >= 0))
+        {
+            using (StreamWriter newFile = File.AppendText($@"{path}-count.txt"))
+            {
+                // Accedemos a Key = palabra y a Count = veces repetidas.
+                newFile.WriteLine("{0} {1}", repeatedWords.Key, repeatedWords.Count());
+            }
+        }
+
+        // LINQ. Se hace el filtro de los grupos, es decir, las palabras repetidas
         // y de forma descendente con respecto a las frecuencias de las palabras.
         foreach (var repeatedWords in words.GroupBy(word => word).Where(word => word.Count() >= 0).OrderByDescending(word => word.Count()))
         {
-            using (StreamWriter newFile = File.AppendText($@"{path}-count.txt"))
+            using (StreamWriter newFile = File.AppendText($@"{path}-a5_matricula-count-descending-numbers.txt"))
             {
                 // Accedemos a Key = palabra y a Count = veces repetidas.
                 newFile.WriteLine("{0} {1}", repeatedWords.Key, repeatedWords.Count());
