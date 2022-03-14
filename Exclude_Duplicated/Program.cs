@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 //se declara un cronometro para la ejecucion del programa
 Stopwatch chronProgram = new Stopwatch();
@@ -12,9 +14,6 @@ string path = "";
 //se crea variable para la suma total de los tiempos que tarda en abrir cada file
 long totalTime = 0;
 
-//variable para el contador de repeticiones
-int reps = 0;
-
 //se declara cronometro para el tiempo en acomodar todas las palabras consolidadas
 Stopwatch orderAllWords = new System.Diagnostics.Stopwatch();
 
@@ -27,7 +26,7 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
     logfile.WriteLine("--------------------------------------------------");
 }
 
-for (int i = 1; i <= 4; i++)
+for (int i = 1; i <= 1; i++)
 {
     //si la vuelta es menor o igual a 10, el nombre del file tendrá dos ceros en el path
     if (i <= 9)
@@ -56,28 +55,15 @@ for (int i = 1; i <= 4; i++)
         //en cada vuelta se guardan todas las palabras de un file en el array words
         string[] words = File.ReadAllLines(path.ToString()).ToArray();
 
-        //el primer for asigna la palabra al string thisWord
-        for (int word = 0; word < words.Length; word++)
+        // LINQ. Se hace el filtro de los grupos, es decir, las palabras repetidas.
+        foreach (var grouping in words.GroupBy(t => t).Where(t => t.Count() >= 0))
         {
-            String thisWord = words[word];
-            //el segundo for compara la palabra thisWord con todas las palabras en el array 
-            for (int next = 0; next < words.Length; next++)
-            {
-                //si la palabra es igual, aumenta el contador
-                if (thisWord == words[next])
-                {
-                    reps += 1;
-                }
-            }
-
-            //ahora necesito agregar un condicion para poder agregar lo de abajo al nuevo file. Si no agrego una
-            //condición, agrega el texto por cada vuelta y necesitamos que lo agregue una sola vez
-
+            //Console.WriteLine(string.Format("'{0}' está repetido {1} veces.", grouping.Key, grouping.Count()));
             using (StreamWriter newFile = File.AppendText($@"{path}-count.txt"))
             {
-                newFile.WriteLine(words[word] + ";" + reps);
+                // Accdedemos a Key = palabra y a Count = veces repetidas.
+                newFile.WriteLine("{0} {1}", grouping.Key, grouping.Count());
             }
-            reps = 0;
         }
 
         //se detiene el cronometro
