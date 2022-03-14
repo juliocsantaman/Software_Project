@@ -26,7 +26,7 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
     logfile.WriteLine("--------------------------------------------------");
 }
 
-for (int i = 1; i <= 3; i++)
+for (int i = 1; i <= 4; i++)
 {
     //si la vuelta es menor o igual a 10, el nombre del file tendrá dos ceros en el path
     if (i <= 9)
