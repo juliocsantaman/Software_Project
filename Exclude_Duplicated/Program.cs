@@ -70,7 +70,7 @@ for (int i = 1; i <= 1; i++)
         // y de forma descendente con respecto a las frecuencias de las palabras.
         foreach (var repeatedWords in words.GroupBy(word => word).Where(word => word.Count() >= 0).OrderByDescending(word => word.Count()))
         {
-            using (StreamWriter newFile = File.AppendText(resultantFile))
+            using (StreamWriter newFile = File.AppendText($@"{path}-a5_matricula-count-descending-numbers.txt"))
             {
                 // Accedemos a Key = palabra y a Count = veces repetidas.
                 newFile.WriteLine("{0} {1}", repeatedWords.Key, repeatedWords.Count());
