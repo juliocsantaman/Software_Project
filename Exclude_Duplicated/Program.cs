@@ -26,7 +26,7 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
     logfile.WriteLine("--------------------------------------------------");
 }
 
-for (int i = 1; i <= 4; i++)
+for (int i = 1; i <= 503; i++)
 {
     //si la vuelta es menor o igual a 10, el nombre del file tendrá dos ceros en el path
     if (i <= 9)
@@ -68,14 +68,14 @@ for (int i = 1; i <= 4; i++)
 
         // LINQ. Se hace el filtro de los grupos, es decir, las palabras repetidas
         // y de forma descendente con respecto a las frecuencias de las palabras.
-        foreach (var repeatedWords in words.GroupBy(word => word).Where(word => word.Count() >= 0).OrderByDescending(word => word.Count()))
+        /*foreach (var repeatedWords in words.GroupBy(word => word).Where(word => word.Count() >= 0).OrderByDescending(word => word.Count()))
         {
             using (StreamWriter newFile = File.AppendText($@"{path}-a5_matricula-count-descending-numbers.txt"))
             {
                 // Accedemos a Key = palabra y a Count = veces repetidas.
                 newFile.WriteLine("{0} {1}", repeatedWords.Key, repeatedWords.Count());
             }
-        }
+        }*/
 
         //se detiene el cronometro
         countWords.Stop();
