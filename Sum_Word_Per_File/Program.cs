@@ -21,7 +21,7 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
 //se agregan todas las palabras del consolidado en un array de strings
 string[] words = File.ReadAllLines(@"a5_matricula.txt".ToString()).ToArray();
 
-for (int i = 0; i < words.Length; i++)
+for (int i = 0; i < 1; i++)
 {
     //se agrega al string content el contenido de la posición actual
     String content = words[i];
@@ -32,7 +32,7 @@ for (int i = 0; i < words.Length; i++)
     //se asigna la primer palabra en el string
     String wordToCompare = str[0];
 
-    for (int i2 = 1; i2 <= 1; i2++)
+    for (int i2 = 1; i2 <= 503; i2++)
     {
         //se declara un cronometro para el tiempo en revisar cada file con cada palabra
         Stopwatch chronFile = new Stopwatch();
@@ -42,35 +42,26 @@ for (int i = 0; i < words.Length; i++)
 
         if (i2 <= 9)
         {
-            path = $@"files\00{i2}.html-copy.html-ordered.txt-count.txt";
+            path = $@"files\00{i2}.html-copy.html-ordered.txt";
         }
         //si la vuelta es mayor que 10 y menor o igual a 100, el nombre del file tendrá un cero en el path
         if (i2 >= 10 && i2 <= 99)
         {
-            path = $@"files\0{i2}.html-copy.html-ordered.txt-count.txt";
+            path = $@"files\0{i2}.html-copy.html-ordered.txt";
         }
         //si la vuelta es mayor a 100 y menor o igual a 503, el path ya no tendrá ceros, unicamente el numero de la vuelta
         if (i2 >= 100 && i2 <= 503)
         {
-            path = $@"files\{i2}.html-copy.html-ordered.txt-count.txt";
+            path = $@"files\{i2}.html-copy.html-ordered.txt";
         }
 
-        //se crea un array para guardar todas el contenido del file
+        //se crea un array para guardar todo el contenido del file
         string[] words2 = File.ReadAllLines(path.ToString()).ToArray();
 
-        for (int i3 = 0; i3 < words2.Length; i3++)
+        int index = Array.IndexOf(words2, wordToCompare);
+        if (index > -1)
         {
-            //se separa el contenido
-            String[] str2 = words2[i3].Split(' ');
-
-            //se asigna la primera palabra al string de palabra a comparar
-            String wordCompared = str2[0];
-
-            //si son iguales, quiere decir que en este file si está la palabra, se aumenta el contador y se detiene la comparación
-            if (wordCompared == wordToCompare){
-                count++;
-                break;
-            }
+            count++;
         }
 
         //se detiene el cronometro
@@ -115,4 +106,3 @@ using (StreamWriter logfile = File.AppendText(@"log.txt"))
 
 //se muestra el tiempo de ejecucíon del programa
 Console.WriteLine("El programa se ejecutó en " + chronProgram.ElapsedMilliseconds + " ms");
-
