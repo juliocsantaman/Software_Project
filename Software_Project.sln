@@ -19,7 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sum_Word_Per_File", "Sum_Wo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "File_Posting", "File_Posting\File_Posting.csproj", "{DBC6E3F8-6BEC-4E70-B17F-31E4DF237320}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stop_List", "Stop_List\Stop_List.csproj", "{CBE56286-C31D-4FD2-9FA0-7AD5E5375F56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stop_List", "Stop_List\Stop_List.csproj", "{CBE56286-C31D-4FD2-9FA0-7AD5E5375F56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weight_Tokens", "Weight_Tokens\Weight_Tokens.csproj", "{F27507D1-7383-416B-9FDE-569259B73368}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hash_Table", "Hash_Table\Hash_Table.csproj", "{30D417C1-267B-46FC-B22A-352C9B8816A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +67,14 @@ Global
 		{CBE56286-C31D-4FD2-9FA0-7AD5E5375F56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBE56286-C31D-4FD2-9FA0-7AD5E5375F56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBE56286-C31D-4FD2-9FA0-7AD5E5375F56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27507D1-7383-416B-9FDE-569259B73368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27507D1-7383-416B-9FDE-569259B73368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27507D1-7383-416B-9FDE-569259B73368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27507D1-7383-416B-9FDE-569259B73368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D417C1-267B-46FC-B22A-352C9B8816A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D417C1-267B-46FC-B22A-352C9B8816A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D417C1-267B-46FC-B22A-352C9B8816A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D417C1-267B-46FC-B22A-352C9B8816A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
