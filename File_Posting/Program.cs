@@ -109,7 +109,7 @@ for (int i = 0; i < 100; i++)
 
         // Si es igual a cero, entonces no
         // lo ponemos en el archivo posting.
-        /*if (lastIndex > 0)
+        if (lastIndex > 0)
         {
             // Se agrega el path donde se encuentra el token
             // y la cantidad de repeticiones.
@@ -117,8 +117,7 @@ for (int i = 0; i < 100; i++)
             // Test.
             // testSum += lastIndex;
             // testSum2 += 1;
-        }*/
-        postingList.Add(path + ";" + lastIndex + ";");
+        }
     }
 
     // Si es igual a cero,
