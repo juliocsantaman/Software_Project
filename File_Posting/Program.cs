@@ -15,6 +15,7 @@ int fileCount = 0;
 
 // Contador para la columna de Posting.
 int postingCount = 0;
+int fileCountOld = 0;
 
 // Lista de posting,
 // ruta del archivo y número de repetición
@@ -25,12 +26,6 @@ List<string> postingList = new List<string>();
 // encontrada en un archivo.
 int lastIndex = -1;
 
-// Un test que hice para ver si daba bien la 
-// suma del total de repeticiones de una palabra
-// y el total de número de archivos.
-// se puede borrar, pero para probarlo.
-// int testSum = 0, testSum2 = 0;
-
 //se agrega un detalle decorativo al log file para separar una ejecucion de otra
 using (StreamWriter logfile = File.AppendText(@"a7_matricula.txt"))
 {
@@ -40,7 +35,7 @@ using (StreamWriter logfile = File.AppendText(@"a7_matricula.txt"))
 //se agregan todas las palabras del consolidado en un array de strings
 string[] words = File.ReadAllLines(@"a5_matricula.txt".ToString()).ToArray();
 
-for (int i = 0; i < 100; i++)
+for (int i = 0; i < 9; i++)
 {
     //se agrega al string content el contenido de la posición actual
     String content = words[i];
@@ -114,26 +109,26 @@ for (int i = 0; i < 100; i++)
             // Se agrega el path donde se encuentra el token
             // y la cantidad de repeticiones.
             postingList.Add(path + ";" + lastIndex + ";");
-            // Test.
-            // testSum += lastIndex;
-            // testSum2 += 1;
         }
+
     }
 
     // Si es igual a cero,
     // entonces es la primera posición.
-    if (postingCount == 0)
+    if (fileCountOld == 0)
     {
         content = str[0] + ";" + fileCount + ";" + postingCount;
-        postingCount = fileCount;
+        // Se guarda la cantidad de archivos
+        // que se contó en esta vuelta en una variable temporal.
+        fileCountOld = fileCount;
     }
     else
     {
-        // Si no es igual a cero, 
-        // entonces ya empezamos a hacer la suma
-        // de count + postingCount para obtener la columna de 
-        // postingCount.
-        postingCount = fileCount + postingCount;
+        // Se suma el conteo de archivos anterior con el postingCount.
+        postingCount = fileCountOld + postingCount;
+        // Se guarda la cantidad de archivos
+        // que se contó en esta vuelta en una variable temporal.
+        fileCountOld = fileCount;
         content = str[0] + ";" + fileCount + ";" + postingCount;
     }
 
@@ -169,6 +164,3 @@ using (StreamWriter logfile = File.AppendText(@"a7_matricula.txt"))
 
 //se muestra el tiempo de ejecucíon del programa
 Console.WriteLine("El programa se ejecutó en " + chronProgram.ElapsedMilliseconds + " ms");
-
-// System.Console.WriteLine("TEST - Suma total de repetición de archivos: " + testSum);
-// System.Console.WriteLine("TEST - Suma total de número de documentos: " + testSum2);
