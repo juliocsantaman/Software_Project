@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections;
 
 
+
 //se declara un cronometro para la ejecucion del programa
 Stopwatch chronProgram = new Stopwatch();
 
@@ -25,7 +26,7 @@ string[] words = File.ReadAllLines(@"a5_matricula.txt".ToString()).ToArray();
 List<string> documentList = new List<string>();
 
 //se agrega un detalle decorativo al log file para separar una ejecucion de otra
-using (StreamWriter logfile = File.AppendText(@"a10_matricula.txt"))
+using (StreamWriter logfile = File.AppendText(@"a11_matricula.txt"))
 {
     logfile.WriteLine("--------------------------------------------------");
 }
@@ -102,7 +103,7 @@ for (int i = 1; i <= 3; i++)
 
             checkFile.Stop();
 
-            using (StreamWriter logfile = File.AppendText(@"a10_matricula.txt"))
+            using (StreamWriter logfile = File.AppendText(@"a11_matricula.txt"))
             {
                 logfile.WriteLine("Se ha calculado el peso del token " + wordToCompare + " en el file " + path + " en " + checkFile.ElapsedMilliseconds + "ms");
             }
@@ -130,7 +131,7 @@ File.WriteAllLines(@"documentFile.txt".ToString(), documentList);
 chronProgram.Stop();
 
 //se agrega al log file lo que se mostrará en consola y se cierra el identificador de ejecución
-using (StreamWriter logfile = File.AppendText(@"a10_matricula.txt"))
+using (StreamWriter logfile = File.AppendText(@"a11_matricula.txt"))
 {
     logfile.WriteLine("El programa se ejecutó en " + chronProgram.ElapsedMilliseconds + " ms");
     logfile.WriteLine("--------------------------------------------------");
