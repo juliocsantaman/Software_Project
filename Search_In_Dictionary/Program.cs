@@ -8,6 +8,11 @@ class Program
         Console.WriteLine("Que palabra deseas buscar?: ");
         //se lee la palabra ingresada
         string word = Console.ReadLine();
+        //si no se ingreso ningun valor se imprime mensaje
+        if (word == "")
+        {
+            Console.WriteLine("Debes ingresar un valor");
+        }
         //se llama a la función
         FindWord(word);
     }
@@ -60,6 +65,7 @@ class Program
                         logfile.WriteLine("Se encontro " + word + " en " + path);
                     }
                     break;
+
                 }
             }
         }
