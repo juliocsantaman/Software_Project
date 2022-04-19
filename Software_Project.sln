@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weight_Tokens", "Weight_Tok
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hash_Table", "Hash_Table\Hash_Table.csproj", "{30D417C1-267B-46FC-B22A-352C9B8816A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndexOfDocuments", "IndexOfDocuments\IndexOfDocuments.csproj", "{6F64ABFB-C091-4B40-91F7-9380ABAB4D34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexOfDocuments", "IndexOfDocuments\IndexOfDocuments.csproj", "{6F64ABFB-C091-4B40-91F7-9380ABAB4D34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindWord", "Search_In_Dictionary\FindWord.csproj", "{691D9FD8-E449-45A9-B610-F13EF6FF78C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{6F64ABFB-C091-4B40-91F7-9380ABAB4D34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F64ABFB-C091-4B40-91F7-9380ABAB4D34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F64ABFB-C091-4B40-91F7-9380ABAB4D34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{691D9FD8-E449-45A9-B610-F13EF6FF78C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{691D9FD8-E449-45A9-B610-F13EF6FF78C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{691D9FD8-E449-45A9-B610-F13EF6FF78C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{691D9FD8-E449-45A9-B610-F13EF6FF78C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

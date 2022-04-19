@@ -35,7 +35,7 @@ using (StreamWriter logfile = File.AppendText(@"a7_matricula.txt"))
 //se agregan todas las palabras del consolidado en un array de strings
 string[] words = File.ReadAllLines(@"a5_matricula.txt".ToString()).ToArray();
 
-for (int i = 0; i < 9; i++)
+for (int i = 0; i < words.Length; i++)
 {
     //se agrega al string content el contenido de la posición actual
     String content = words[i];
