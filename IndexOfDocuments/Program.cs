@@ -2,8 +2,6 @@
 using System.Text;
 using System.Collections;
 
-
-
 //se declara un cronometro para la ejecucion del programa
 Stopwatch chronProgram = new Stopwatch();
 
@@ -31,7 +29,7 @@ using (StreamWriter logfile = File.AppendText(@"a11_matricula.txt"))
     logfile.WriteLine("--------------------------------------------------");
 }
 
-for (int i = 1; i <= 3; i++)
+for (int i = 1; i <= 503; i++)
 {
     if (i <= 9)
     {
@@ -99,7 +97,7 @@ for (int i = 1; i <= 3; i++)
             float weightToken = (totalWordReps * 100) / repsInFile;
 
             //se agrega a la lista
-            postingList.Add(idPath + ";" + totalWordReps + "*100/" + repsInFile + "=" + weightToken);
+            postingList.Add(id + ";" + totalWordReps + "*100/" + repsInFile + "=" + weightToken);
 
             checkFile.Stop();
 
