@@ -75,14 +75,14 @@ for (int i = 1; i <= 503; i++)
         if (repsInFile == 0)
         {
             //se agrega a la lista
-            postingList.Add(path + ";" + totalWordReps + "*100/" + repsInFile + "=0");
+            postingList.Add(path + ";" + "0");
         } else
         {
             //se calcula el peso
             float weightToken = (totalWordReps * 100) / repsInFile;
 
             //se agrega a la lista
-            postingList.Add(path + ";" + totalWordReps + "*100/" + repsInFile + "=" + weightToken);
+            postingList.Add(path + ";" + weightToken);
 
             checkFile.Stop();
 
