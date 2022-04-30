@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IndexOfDocuments", "IndexOf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindWord", "Search_In_Dictionary\FindWord.csproj", "{691D9FD8-E449-45A9-B610-F13EF6FF78C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tokenize_ev1", "Tokenize_ev1\Tokenize_ev1.csproj", "{08D042F7-0C21-4CF2-9D90-4C9466E570D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tokenize_ev1", "Tokenize_ev1\Tokenize_ev1.csproj", "{08D042F7-0C21-4CF2-9D90-4C9466E570D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Index_ev1", "Index_ev1\Index_ev1.csproj", "{D3771778-72C0-42E8-9A9F-856CC80491B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Index_ev1", "Index_ev1\Index_ev1.csproj", "{D3771778-72C0-42E8-9A9F-856CC80491B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optimized_Search", "Optimized_Search\Optimized_Search.csproj", "{14DB5F16-1B06-45FC-9DC3-77DC9A06D9B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{D3771778-72C0-42E8-9A9F-856CC80491B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3771778-72C0-42E8-9A9F-856CC80491B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3771778-72C0-42E8-9A9F-856CC80491B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DB5F16-1B06-45FC-9DC3-77DC9A06D9B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DB5F16-1B06-45FC-9DC3-77DC9A06D9B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DB5F16-1B06-45FC-9DC3-77DC9A06D9B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DB5F16-1B06-45FC-9DC3-77DC9A06D9B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
