@@ -21,6 +21,13 @@ class Program
 
     public static bool optSearch(string word)
     {
+
+        //se declara cronometro para el programa
+        Stopwatch chronProgram = new Stopwatch();
+
+        //se inicia cronometro
+        chronProgram.Start();
+
         String path = "";
 
         word = word.ToLower().Trim();
@@ -78,11 +85,23 @@ class Program
                 count++;
             }
         }
+
+        //se detiene el cronometro
+        chronProgram.Stop();
+
+        //se agrega el tiempo de ejecucion al log
+        using (StreamWriter logfile = File.AppendText(@"log.txt"))
+        {
+            logfile.WriteLine("Se ejecutó busqueda en " + chronProgram.ElapsedMilliseconds + "ms");
+            logfile.WriteLine("---------------------------------------------------------");
+        }
+
         if (count > 1)
         {
             return true;
         } 
 
         return false;
+
     } 
 }
