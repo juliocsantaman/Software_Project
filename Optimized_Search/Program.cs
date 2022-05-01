@@ -9,17 +9,21 @@ class Program
         {
             Console.WriteLine("Escribe la palabra que deseas buscar: ");
             string word = Console.ReadLine();
-            optSearch(word);
+            //optSearch(word);
+            if (!optSearch(word))
+            {
+                Console.WriteLine("La palabra no existe en el diccionario");
+            }
             Console.WriteLine("Deseas añadir otra? (Y/N): ");
             ans = Console.ReadLine();
         } while (ans == "Y" | ans == "y");
     }
 
-    public static void optSearch(string word)
+    public static bool optSearch(string word)
     {
         String path = "";
 
-        word = word.ToLower();
+        word = word.ToLower().Trim();
 
         int repsInFile = 0;
 
@@ -46,7 +50,7 @@ class Program
 
             for (int j = 0; j < fileWords.Length; j++)
             {
-                if (fileWords[j] == word)
+                if (fileWords[j].ToLower() == word)
                 {
                     repsInFile++;
                 }
@@ -57,11 +61,28 @@ class Program
 
         }
 
-        fileRepsList.ToArray();
+        //st<string> top10 = new List<string>();
+        int count = 1;
 
         for (int i = 0; i < fileRepsList.Count; i++)
         {
-            Console.WriteLine(fileRepsList[i]);
+
+            String[] str = fileRepsList[i].Split(';');
+
+            int reps = Int32.Parse(str[1]);
+            string file = str[0];
+
+            if (reps >= 1 && count <= 10)
+            {
+                Console.WriteLine(file+ ";" + reps);
+                count++;
+            }
         }
-    }
+        if (count > 1)
+        {
+            return true;
+        } 
+
+        return false;
+    } 
 }
