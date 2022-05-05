@@ -20,12 +20,19 @@ async function fetchUrls() {
     container.appendChild(urlContainer);
     urlContainer.id = "urlContainer";
     urlContainer.className = "url-container";
-    p.innerHTML = "<strong>Loading...</strong>";
-    urlContainer.appendChild(p);
 
-    const response = await fetch(`${urlBase}/api/Dictionary/${inputWord.value}`);
-    const urls = await response.json();
-    return urls;
+    if (inputWord.value.trim().length >= 1) {
+        p.innerHTML = "<strong>Loading...</strong>";
+        urlContainer.appendChild(p);
+
+        const response = await fetch(`${urlBase}/api/Dictionary/${inputWord.value}`);
+        const urls = await response.json();
+        return urls;
+    }
+
+    p.innerHTML = "<strong>Ingresa una palabra</strong>";
+    urlContainer.appendChild(p);
+   
 }
 
 function drawElements() {
